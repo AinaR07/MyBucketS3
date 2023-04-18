@@ -4,3 +4,17 @@ Resources:
     Type: "AWS::S3::Bucket"
     Properties:
       BucketName: STD21093
+      
+MonBucketS3NameParam:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "/MyBucket/S3Name"
+      Type: "String"
+      Value: !Ref MonBucketS3
+
+  MonBucketS3ArnParam:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "/MyBucket/S3Arn"
+      Type: "String"
+      Value: !GetAtt MonBucketS3.Arn      
