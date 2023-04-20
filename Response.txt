@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name MonBucketS3 --template-body file://./MyBucketS3/buckets.yml--parameters ParameterKey=BucketName,ParameterValue=my-bucket-name --capabilities CAPABILITY_IAM
